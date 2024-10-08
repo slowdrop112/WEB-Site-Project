@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <%- include("../fragmente/head.ejs") %>
+        <title>Fashion Factory</title>
+        <meta name="keywords"
+            content="adidasi, haine, fashion,designer, trending, livrare, magazin, FashionFactory, Nike, Supreme, Armani, Evisu, Off-White, Bucuresti ">
+        <meta name="description"
+            content="Avem haine de toate tipurile, de la branduri des intalnite precum nike, adidas pana la branduri de lux precum LV, Armani, Maison Margiela, livram in toata tara.">
+            <link rel="stylesheet" href="/resurse/css/galerie-animata.css">
+</head>
+
+<body>
+    <%- include("../fragmente/header.ejs") %>
+
+    <main>
+        <h2 style="text-align: center;"><i>Galerie</i></h2>
+        <section id="container-galerie-animata">
+            <div class="galerie_animata" id="galanim">
+                    <% for (let imag of locals.imagini) { %>
+                        <figure>
+                            <picture>
+                              <source srcset="<%= imag.fisier_mediu %>" media="(max-width: 1200px)" />
+                              <img src="<%= imag.fisier %>" alt="a">
+                            </picture>
+                        <figcaption><%= imag.descriere %></figcaption>
+                      </figure>
+                    <% } %>
+            </div>
+        </section>
+    </main>
+        
+        <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

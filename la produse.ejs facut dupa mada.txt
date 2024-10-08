@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+        <title>Fashion Factory</title>
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <p id="total-products">Număr total de produse: <span id="numar-produse"></span></p>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <label>Nume: <input type="text" class="form-control" id="inp-nume"></label>
+                </div>
+                <div class="col">
+                    <label>Firmă:</label>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="i_rad_evisu" name="gr_rad_firma" value="Evisu" type="radio"/>
+                            <label class="form-check-label" for="i_rad_evisu">Evisu</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="i_rad_ralph" name="gr_rad_firma" value="Ralph Lauren" type="radio"/>
+                            <label class="form-check-label" for="i_rad_ralph">Ralph Lauren</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="i_rad_balance" name="gr_rad_firma" value="New Balance" type="radio"/>
+                            <label class="form-check-label" for="i_rad_balance">New Balance</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="i_rad_faber_nike" name="gr_rad_firma" value="Nike" type="radio"/>
+                            <label class="form-check-label" for="i_rad_faber_nike">Nike</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="i_rad_adidas" name="gr_rad_firma" value="Adidas" type="radio"/>
+                            <label class="form-check-label" for="i_rad_adidas">Adidas</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="i_rad_toate" name="gr_rad_firma" value="toate" checked type="radio"/>
+                            <label class="form-check-label" for="i_rad_toate">Toate</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr id="hrgradient">
+            <div class="row">
+                <div class="col">
+                    <label>Pret minim: 0 - 140 <span id="infoRangeMin">(0)</span></label>
+                    <input class="form-range" type="range" id="inp-pret-min" value="0" min="0" max="140">
+                    <label>Pret maxim: 0 - 150 <span id="infoRangeMax">(150)</span></label>
+                    <input class="form-range" type="range" id="inp-pret-max" value="150" min="0" max="150">
+                </div>
+                <div class="col">
+                    <label>Select material:</label>
+                    <select id="inp-culoare" class="form-select">
+                        <option value="toate" selected>Toate</option>
+                        <option value="rosu">Bumbac</option>
+                        <option value="albastru">Albastru</option>
+                        <option value="verde">Verde</option>
+                    </select>
+                </div>
+            </div>
+            <hr id="hrgradient">
+            <div class="row">
+                <div class="col">
+                    Sortare după:
+                    <select id="sortKey1" class="form-select">
+                        <option value="pret">Pret</option>
+                        <option value="nume">Nume</option>
+                        <option value="nr_bucati">Număr Bucăți</option>
+                        <option value="firma">Firmă</option>
+                    </select>
+                    și
+                    <select id="sortKey2" class="form-select">
+                        <option value="pret">Pret</option>
+                        <option value="nume">Nume</option>
+                        <option value="nr_bucati">Număr Bucăți</option>
+                        <option value="firma">Firmă</option>
+                    </select>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sortOrder" value="asc" checked>
+                        <label class="form-check-label">Ascendent</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sortOrder" value="desc">
+                        <label class="form-check-label">Descendent</label>
+                    </div>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="reciclabil" value="reciclabil">
+                        <label class="form-check-label" for="reciclabil">Reciclabil</label>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary" id="filtrare"><i class="fa-solid fa-filter"></i> <span id="ascunde">Filtrează</span></button>
+                    <button class="btn btn-secondary" id="resetare"><i class="fa-solid fa-gear"></i> <span id="ascunde">Resetează</span></button>
+                </div>
+            </div>
+            <p id="p-suma">Apăsați Alt+"c" pentru suma prețurilor produselor afișate.</p>
+        <section id="produse">
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                    <article class="produs" >
+                        <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <div class="info-prod">
+                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+                            <p class="marimi">Marimi: <span class="val-marimi"><%- prod.marimi%></span></p>
+                            <p class="greutate">Greutate: <span class="val-greutate"><%- prod.greutate%></span></p>
+                        </div>
+                        <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
+                        <figure>
+                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagine/galerie/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                        </figure>
+                        <label class="selecteaza-cos">
+                            Selectează:<br/>
+                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                        </label>
+                    </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

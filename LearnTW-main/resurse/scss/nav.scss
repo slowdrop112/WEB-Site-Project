@@ -1,0 +1,139 @@
+@import "../css/variables.css";
+
+#navbar {
+    background-color: var(--dark);
+    font-family: var(--regularFont);
+    height: var(--navHeight);
+
+    #hamburger-container {
+        display: flex;
+
+        .hamburger {
+            display: none;
+            padding: 1em;
+            z-index: 200;
+
+            .bar {
+                width: 25px;
+                height: 3px;
+                background-color: var(--white);
+                margin: 4px 0;
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li:hover a {
+            transform: scale(1.2);
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0;
+            text-align: center;
+
+            li {
+                list-style: none;
+                position: relative;
+
+                &:hover>ul {
+                    display: block;
+                    width: 100%;
+                    align-items: center;
+                }
+
+                ul {
+                    display: none;
+                    animation: nav-ul-animation 1s linear 1 forwards;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: var(--dark);
+                    z-index: 100;
+
+                    @keyframes nav-ul-animation {
+                        0% {
+                            opacity: 0;
+                            transform: scaleY(0);
+                        }
+
+                        100% {
+                            opacity: 1;
+                            transform: scaleY(1);
+                        }
+                    }
+
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    li::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        height: 0;
+                        width: 15px;
+                        background: linear-gradient(to right, var(--white) 0%, var(--dark) 100%);
+                        transition: height 1s ease;
+                        left: 0;
+                        z-index: -1;
+                    }
+
+                    li::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        height: 0;
+                        width: 15px;
+                        background: linear-gradient(to left, var(--white) 0%, var(--dark) 100%);
+                        transition: height 1s ease;
+                        right: 0;
+                        z-index: -1;
+                    }
+
+                    li:hover::before,
+                    li:hover::after {
+                        height: 100%;
+                    }
+                }
+
+                a {
+                    transition: 1s ease-in-out;
+                    display: block;
+                    text-decoration: none;
+                    color: var(--white);
+                    box-sizing: border-box;
+                    line-height: var(--navHeight);
+                    padding: 0 2rem;
+                    width: auto;
+
+                    #acasa-icon {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+
+        #schimba_tema {
+            border: 0;
+            background: var(--blueDark);
+            color: var(--white);
+            height: 100%;
+            margin: .5rem;
+
+            &:hover {
+                background: var(--blueLight);
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <%- include("../fragmente/head.ejs") %>
+    <meta name="keywords"
+        content="adidasi, haine, fashion,designer, trending, livrare, magazin, FashionFactory, Nike, Supreme, Armani, Evisu, Off-White, Bucuresti ">
+    <meta name="description"
+        content="Avem haine de toate tipurile, de la branduri des intalnite precum nike, adidas pana la branduri de lux precum LV, Armani, Maison Margiela, livram in toata tara.">
+    <title>Fashion Factory</title>
+    <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/resurse/js/produse.js"></script>
+
+
+</head>
+
+<body>
+    <%- include("../fragmente/header") %>
+
+    <main class="container my-4">
+        <section>
+            <article id="art-produs" class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title"><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <p class="card-text">Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p class="card-text">Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p class="card-text">Material: <span class="material"><%- locals.prod.material %> </span></p>
+                    <p class="card-text">Marimi: <span class="marimi"><%- locals.prod.marimi %> </span></p>
+                    <p class="card-text">Brand: <span class="brand"><%- locals.prod.brand %> </span></p>
+                    <p class="card-text">Greutate: <span class="greutate"><%- locals.prod.greutate %> </span></p>
+                    <p class="card-text">Categorie: <span class="categorie"><%- locals.prod.tip_produs %> </span></p>
+                    <p class="card-text">In Stoc: <span class="in_stoc"><%- locals.prod.in_stoc %> </span></p>
+                    <p class="card-text">Data adăugare: <span class="data_adaugare"><%- locals.prod.data_adaugare %> </span></p>
+                    <figure class="imag-produs">
+                        <div id="carouselExample" class="carousel slide w-100" data-bs-ride="carousel">
+                            <!-- Carousel Inner with Dynamic Images -->
+                            <div class="carousel-inner">
+                                <% for(let i=1; i <=2; i++) { %>
+                                    <div class="carousel-item <%= i === 1 ? 'active' : '' %>">
+                                        <img src="/resurse/imagine/produse/<%- locals.prod.nume %>/img-<%= i %>.jpg"
+                                            class="d-block w-100" alt="Imagine <%- i %>">
+                                    </div>
+                                <% } %>
+                            </div>
+                            <!-- Controls for navigating through the carousel -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </figure>
+                </div>
+            </article>
+        </section>
+        
+    </main>
+
+    <%- include("../fragmente/footer") %>
+
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

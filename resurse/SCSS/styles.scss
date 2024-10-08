@@ -1,0 +1,49 @@
+$border-image: url('border.png') 30 round; // Imaginea pentru border-image
+$animation-duration: 5s; // Durata animației
+
+.galerie {
+  display: none; // Galeria nu va fi afișată pe ecrane medii și mici
+  @media(min-width: 768px) {
+    display: block;
+    border: 10px solid transparent;
+    border-image: $border-image;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    transition: clip-path $animation-duration ease-in-out;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &.hover {
+    .image-container {
+      animation-play-state: paused;
+    }
+  }
+}
+
+// Animație pentru decupare
+@keyframes clip-path-animation {
+  0% {
+    clip-path: inset(0%);
+  }
+  50% {
+    clip-path: inset(0% 50%);
+  }
+  100% {
+    clip-path: inset(0%);
+  }
+}
+
+.image-container {
+  animation: clip-path-animation $animation-duration infinite;
+}

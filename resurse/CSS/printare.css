@@ -1,0 +1,97 @@
+/* Stilurile pentru printare */
+@media print {
+    /* Bannerul */
+    .project-banner {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        text-align: center;
+        border: 1px dotted black;
+        background: white;
+        z-index: 1000;
+        padding: 5px;
+    }
+
+    /* Ascunderea elementelor media și a linkului către începutul paginii */
+    img, video, iframe, .media-dependent, .back-to-top-link {
+        display: none;
+    }
+
+    /* Gridul paginii ca block */
+    .grid {
+        display: block;
+    }
+
+    /* Linkurile să fie afișate ca text normal */
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* Headingul de nivel 1 */
+    h1 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 2.5em;
+        text-decoration: underline;
+        margin: 0;
+        z-index: 999;
+    }
+
+    /* Meniul va fi ascuns */
+    .menu {
+        display: none;
+    }
+
+    /* Page break după heading */
+    h1::after {
+        content: "";
+        display: block;
+        page-break-after: always;
+    }
+
+    /* Page break înainte de footer */
+    footer::before {
+        content: "";
+        display: block;
+        page-break-before: always;
+    }
+
+    /* Watermark */
+    body {
+        position: relative;
+    }
+
+    body::after {
+        content: 'Grigore Cristian';
+        position: fixed;
+        width: 100px;
+        height: 2cm;
+        border: 3px double black;
+        opacity: 0.65;
+        bottom: 10px; 
+        right: 10px; 
+        background: white; 
+        z-index: 1000;
+    }
+
+    /* Margini pentru pagini */
+    @page {
+        margin: 2.5cm 0.5cm;
+    }
+
+    @page:left {
+        margin-left: 2.5cm;
+        margin-right: 0.5cm;
+    }
+
+    @page:right {
+        margin-left: 0.5cm;
+        margin-right: 2.5cm;
+    }
+}

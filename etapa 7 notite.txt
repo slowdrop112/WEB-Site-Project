@@ -1,0 +1,56 @@
+etapa 7
+
+--accesbd--
+accesbd-query builder- administreaza conexinea la baza de date
+
+#- privat in js
+
+am creat 2 prop statice ca sa fie clasa singletone
+singletone- sa nu creez mai multe instante (o instanta o conexiune)
+
+
+constructor- in constructor ne ocupam de setarea proprietatilor
+in js constructorul se cheama constructor
+
+try catch throw- prinde eroarea pentru a fi tratata
+codul problematic il punem in try 
+si dupa in catch prind exceptia vad tipul de exceptie si tratez
+
+
+
+56-    static getInstanta({init="local"}={}){
+
+e ca un parametru defalt lui init(parametru implicit)
+getInstanta este apelat si daca exista o apeleaza si daca nu o creeaza si dupa o returneaza
+
+
+58- daca nu exista instanta dupa setam faptul ca initializam si creem instanta (new accesbd)
+
+
+65- bloc try( inseamna ca poate sa arunge erori)
+vad ca este loca, atunci o sa apeleze initLocal
+
+this- va fi o prop a obiectului curent
+
+metoda select -104- numele tabelului, campul si conditia
+
+conditiiWhere o sa fie tot e vine dupa where dupa comanda select
+
+module.exports=AccesBD; export clasa, adica cand dau require da require la clasa
+--accesbd--
+
+
+
+--drepturi--
+symbol face sa fie unic
+
+--drepturi
+
+--utilizator--
+
+construcotrul primeste toate datele care dupa vor fi bagate in tabel
+
+("^[A-Z][a-z]+$")
+ia stringurile care au doar caractere de aici, incep si se termina cu caractere de aici ^la inceput $ la sfarsit
+
+

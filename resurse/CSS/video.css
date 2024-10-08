@@ -1,0 +1,30 @@
+#video-vtt {
+    width: 100%;
+    min-width: 300px;
+    max-width: 700px;
+  }
+  
+  /* Stilurile pentru textul VTT */
+  ::cue {
+    background-color: transparent;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+  }
+  
+  /* Stilurile pentru intervalul de timp cu mesaje VTT în prima jumătate a videoclipului */
+::cue(between(0s, 9.5s)) {
+    position: absolute;
+    bottom: 20px; /* Afișăm textul în partea de jos a videoclipului */
+    left: 50%; /* Centrăm textul pe orizontală */
+    transform: translateX(-50%); /* Centrăm textul pe orizontală */
+  }
+  
+  /* Stilurile pentru intervalul de timp cu mesaje VTT în a doua jumătate a videoclipului */
+  ::cue(between(9.5s, 19s)) {
+    position: absolute;
+    top: 20px; /* Afișăm textul în partea de sus a videoclipului */
+    left: 50%; /* Centrăm textul pe orizontală */
+    transform: translateX(-50%); /* Centrăm textul pe orizontală */
+  }
+  
+  

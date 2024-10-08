@@ -1,0 +1,126 @@
+/*.navbar ul{
+    list-style-type:none;
+    background-color: #245255;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding:25px;
+    display:block;
+    text-align: center;
+}
+
+.navbar a:hover{
+    background-color: #0D3033;
+}
+
+.navbar li{
+    float: left;
+} */
+.navbar ul, .navbar {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  background-color: #245255;
+}
+
+.navbar li div, .navbar li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  line-height: 50px;
+  color: white;
+  box-sizing: border-box;
+  transition: all 0.5s linear;
+  text-decoration: none;
+}
+
+@keyframes animatie_submeniu {
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+#hamburger {
+  display: none;
+}
+
+#toggle-nav {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  #acasa-text {
+    display: none;
+  }
+  #hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  .navbar {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #333;
+    left: 0;
+    top: 14%;
+  }
+  .navbar li {
+    width: 100%;
+  }
+  .navbar a {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+  }
+  .navbar ul {
+    display: block;
+    position: static;
+    width: 100%;
+    background-color: #333;
+    border-top: 1px solid #fff;
+  }
+  .navbar ul li {
+    width: 100%;
+    display: block;
+  }
+  #toggle-nav:checked + label + nav .navbar {
+    display: block;
+  }
+}
+.navbar {
+  display: flex;
+}
+.navbar ul {
+  display: none;
+  opacity: 0;
+  transform: scaleY(0);
+}
+.navbar li {
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.navbar li:hover > a {
+  background-color: #0D3033;
+  color: white;
+}
+.navbar li:hover > div {
+  background-color: #0D3033;
+  color: white;
+}
+.navbar li :hover > ul {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  animation: animatie_submeniu 0.5s linear 1 forwards;
+  transform-origin: center top;
+}
+
+/*# sourceMappingURL=nav_test1.css.map */

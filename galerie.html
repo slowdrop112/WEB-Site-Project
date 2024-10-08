@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <%- include("../fragmente/head.ejs") %>
+        <title>Fashion Factory</title>
+        <meta name="keywords"
+            content="adidasi, haine, fashion,designer, trending, livrare, magazin, FashionFactory, Nike, Supreme, Armani, Evisu, Off-White, Bucuresti ">
+        <meta name="description"
+            content="Avem haine de toate tipurile, de la branduri des intalnite precum nike, adidas pana la branduri de lux precum LV, Armani, Maison Margiela, livram in toata tara.">
+
+</head>
+
+
+<body>
+    <main>
+    <%- include("../fragmente/header.ejs") %>
+
+    <section id="galerie-statica">
+        <h2>Galerie</h2>
+        <div id="grid-galerie">
+            <% 
+                var vLuni=["ianuarie", "februarie", "martie", "aprilie","iunie","iulie","august","septembrie","octombrie","noiembrie","decembrie"];
+                var d=new Date();
+                var lunaCurenta=vLuni[d.getMonth()];
+                for (let imag of locals.imagini) { 
+                    if (imag?.luni?.includes(lunaCurenta)) {
+                    %>
+                        <figure>
+                            <picture>
+                                <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)"/>
+                                <img src="<%= imag.fisier %>" alt="prajituri">
+                            </picture>
+                        
+                        <figcaption><%= imag.descriere%></figcaption>
+                        </figure>
+                <% } %>
+            <% } %>
+        
+        </div>
+    </main>
+    </section>
+
+        <%- include("../fragmente/footer.ejs") %>
+</body>
+
+</html>

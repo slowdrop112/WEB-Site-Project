@@ -1,0 +1,160 @@
+{
+  "oferte": [
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 21:28:55",
+      "data-finalizare": "2024-06-20 23:08:55",
+      "reducere": 45
+    },
+    {
+      "categorie": "Audi",
+      "data-incepere": "2024-06-20 17:09:54",
+      "data-finalizare": "2024-06-20 17:10:54",
+      "reducere": 25
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 17:08:51",
+      "data-finalizare": "2024-06-20 17:09:51",
+      "reducere": 10
+    },
+    {
+      "categorie": "Audi",
+      "data-incepere": "2024-06-20 17:07:49",
+      "data-finalizare": "2024-06-20 17:08:49",
+      "reducere": 25
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 17:06:47",
+      "data-finalizare": "2024-06-20 17:07:47",
+      "reducere": 5
+    },
+    {
+      "categorie": "BMW",
+      "data-incepere": "2024-06-20 17:04:44",
+      "data-finalizare": "2024-06-20 17:05:44",
+      "reducere": 15
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 17:02:42",
+      "data-finalizare": "2024-06-20 17:03:42",
+      "reducere": 25
+    },
+    {
+      "categorie": "BMW",
+      "data-incepere": "2024-06-20 16:58:40",
+      "data-finalizare": "2024-06-20 16:59:40",
+      "reducere": 40
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 16:57:38",
+      "data-finalizare": "2024-06-20 16:58:38",
+      "reducere": 50
+    },
+    {
+      "categorie": "Audi",
+      "data-incepere": "2024-06-20 16:55:36",
+      "data-finalizare": "2024-06-20 16:56:36",
+      "reducere": 35
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 15:03:23",
+      "data-finalizare": "2024-06-20 15:04:23",
+      "reducere": 45
+    },
+    {
+      "categorie": "Audi",
+      "data-incepere": "2024-06-20 15:02:21",
+      "data-finalizare": "2024-06-20 15:03:21",
+      "reducere": 10
+    },
+    {
+      "categorie": "BMW",
+      "data-incepere": "2024-06-20 15:00:19",
+      "data-finalizare": "2024-06-20 15:01:19",
+      "reducere": 20
+    },
+    {
+      "categorie": "Audi",
+      "data-incepere": "2024-06-20 14:59:17",
+      "data-finalizare": "2024-06-20 15:00:17",
+      "reducere": 45
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 14:58:15",
+      "data-finalizare": "2024-06-20 14:59:15",
+      "reducere": 50
+    },
+    {
+      "categorie": "BMW",
+      "data-incepere": "2024-06-20 14:56:03",
+      "data-finalizare": "2024-06-20 14:57:03",
+      "reducere": 40
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 14:51:14",
+      "data-finalizare": "2024-06-20 14:52:14",
+      "reducere": 5
+    },
+    {
+      "categorie": "BMW",
+      "data-incepere": "2024-06-20 14:47:44",
+      "data-finalizare": "2024-06-20 15:17:44",
+      "reducere": 25
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 14:46:42",
+      "data-finalizare": "2024-06-20 15:16:42",
+      "reducere": 25
+    },
+    {
+      "categorie": "BMW",
+      "data-incepere": "2024-06-20 14:39:11",
+      "data-finalizare": "2024-06-20 14:40:11",
+      "reducere": 35
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 14:38:02",
+      "data-finalizare": "2024-06-20 14:38:32",
+      "reducere": 20
+    },
+    {
+      "categorie": "BMW",
+      "data-incepere": "2024-06-20 14:37:30",
+      "data-finalizare": "2024-06-20 14:38:00",
+      "reducere": 50
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 14:35:37",
+      "data-finalizare": "2024-06-20 15:05:37",
+      "reducere": 50
+    },
+    {
+      "categorie": "Mercedes-Benz",
+      "data-incepere": "2024-06-20 14:35:37",
+      "data-finalizare": "2024-06-20 15:05:37",
+      "reducere": 30
+    },
+    {
+      "categorie": "Audi",
+      "data-incepere": "2024-06-20 14:34:55",
+      "data-finalizare": "2024-06-20 15:04:55",
+      "reducere": 40
+    },
+    {
+      "categorie": "BMW",
+      "data-incepere": "2024-06-20 14:09:23",
+      "data-finalizare": "2024-06-20 14:09:53",
+      "reducere": 35
+    }
+  ]
+}

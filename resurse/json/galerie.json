@@ -1,0 +1,46 @@
+{
+	"cale_galerie":"resurse/imagine/galerie",
+	"imagini": [
+		{
+			"fisier":"evisu_tee3.jpg",
+			"descriere":"Tricou Evisu",
+			"luni":["martie","februarie","noiembrie","aprilie"]
+		},
+		{
+			"fisier":"evisu_tee2.jpg",
+			"descriere":"Tricou Evisu",
+			"luni":["ianuarie","februarie","iunie"]
+			
+		},
+		{
+			"fisier":"evisu_tee1.jpg",
+			"descriere":"Tricou Evisu",
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+		},
+		{
+			"fisier":"evisu_jeans.jpg",
+			"descriere":"Blugi Evisu",
+			"luni":["noiembrie","aprilie","iunie"]
+		},
+		{
+			"fisier":"evisu_pants3.jpg",
+			"descriere":"Blugi Evisu"
+		},
+		{
+			"fisier":"evisu_pants.jpg",
+			"descriere":"Blugi Evisu"
+		},
+		{
+			"fisier":"court.jpg",
+			"descriere":"Off Court"
+		},
+		{
+			"fisier":"oof.jpg",
+			"descriere":"Out Of Office"
+		},
+		{
+			"fisier":"sponge.jpg",
+			"descriere":"OW Sponge"
+		}
+	]
+}

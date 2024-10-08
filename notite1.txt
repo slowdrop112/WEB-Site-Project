@@ -1,0 +1,6 @@
+!!filtrare la nivel de sv!!
+`select * from produse ${conditieQuery}`  ${} ca sa adaug val lui conditieQuery doar cand am ``
+
+innerHTML acceseaza si modifica continutul elementelor
+
+

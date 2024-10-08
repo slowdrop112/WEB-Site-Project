@@ -1,0 +1,338 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --text-selection-color: var(--lightCyan); /* #BAD3D5 */
+  --text-selection-background: var(--prussianBlue); /* #0D3033 */
+}
+
+::selection {
+  color: var(--text-selection-color);
+  background: var(--text-selection-background);
+}
+
+body {
+  background-color: var(--prussianBlue); /* #0D3033 */
+  /* Culoarea de fundal a paginii */
+  color: var(--lightCyan); /* #BAD3D5 */
+  /* Culoarea textului */
+  margin: 0;
+  /* Eliminăm marginile implicite ale corpului */
+  padding: 0;
+  /* Eliminăm padding-ul implicite ale corpului */
+  font-family: Arial, sans-serif;
+  /* Setăm o familie de fonturi de rezervă */
+}
+
+main {
+  color: var(--prussianBlue); /* #0D3033 */
+  background-color: var(--lightSteelBlue); /* #81A7AA */
+  padding: 0px;
+  margin: 0px;
+}
+
+footer,
+.fa-phone {
+  background-color: var(--darkSlateGray); /* #245255 */
+  /* Culoarea de fundal a subsolului */
+  color: var(--lightCyan); /* #B5FAFF */
+  /* Culoarea textului din subsol */
+  padding: 20px;
+  /* Spatierea subsolului */
+  text-align: center;
+  /* Aliniere centrata */
+}
+
+.top {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: var(--prussianBlue); /* #0D3033 */
+  color: var(--lightCyan); /* #BAD3D5 */
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.top:hover {
+  background-color: var(--prussianBlue); /* #0D3033 */
+  color: var(--white); /* #ffffff */
+}
+
+h1 {
+  text-align: center;
+}
+
+.intro1 {
+  padding: px;
+}
+
+#promotii {
+  color: var(--prussianBlue); /* #0D3033 */
+}
+
+#haine {
+  color: var(--prussianBlue); /* #0D3033 */
+}
+
+#welcome {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--cadetBlue); /* #598D96 */
+}
+
+.left,
+.right {
+  flex: 1 1 50%;
+  /* Ocupă 50% din lățimea containerului */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.left img,
+.right img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#welcome img {
+  height: 200px;
+  width: 450px;
+  float: left;
+}
+
+#welcome p {
+  margin: 0;
+  /* Eliminăm marginile implicite ale paragrafelor */
+}
+
+#intrebari {
+  color: var(--prussianBlue); /* #0D3033 */
+  background-color: var(--lightSteelBlue); /* #81A7AA */
+}
+
+.taburi-iframe {
+  text-align: left;
+}
+
+.taburi-iframe a {
+  display: inline-block;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: var(--lightCyan); /* #BAD3D5 */
+  background-color: var(--darkSlateGray); /* #245255 */
+}
+
+.taburi-iframe iframe {
+  display: flex;
+  margin-top: 10px;
+}
+
+.taburi-iframe a:hover {
+  background-color: var(--prussianBlue); /* #0D3033 */
+  transition: background-color 1s ease;
+}
+
+.anunturi {
+  display: block;
+}
+
+#tab-marimi th,
+#tab-marimi td {
+  border: 3px solid var(--black); /* #000000 */
+  background-color: var(--white); /* #ffffff */
+  color: var(--black); /* #000000 */
+}
+
+#tab-marimi {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  position: relative;
+}
+
+#tab-marimi caption {
+  caption-side: top; /* Specifică poziția captiunii sub tabel */
+  text-align: center; /* Alinierea textului captiunii */
+  font-weight: bold; /* Stilul fontului pentru captiune */
+  margin-bottom: 10px; /* Spațiul de jos între tabel și captiune */
+  color: var(--prussianBlue); /* #0D3033 */
+}
+
+#tab-marimi th:nth-child(2n+1) {
+  background-color: aqua;
+}
+#tab-marimi tr:hover td {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.8); /* Definim o umbra mai întunecată la hover pentru fiecare celulă */
+  transition: box-shadow 0.5s ease; /* Adăugăm o tranziție pentru umbra */
+}
+
+#acasa-mediu {
+  display: none;
+}
+
+#acasa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+}
+
+.text-coloane {
+  column-count: 2;
+  column-width: 50px;
+  column-gap: 30px;
+  column-rule-style: solid;
+  column-rule-width: 1px;
+  column-rule-color: #ff0202;
+}
+
+@media screen and (max-width: 900px) {
+  .text-coloane {
+    column-count: 1;
+    column-width: 50px;
+    column-gap: 30px;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+    column-rule-color: var(--black); /* #000000 */
+  }
+}
+
+#reflexie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6em;
+  color: var(--lightCyan); /* #BAD3D5 */
+  transition: all 0.5s linear;
+}
+
+#text-reflectat1,
+#text-reflectat2 {
+  flex: 1;
+  font-size: 40px;
+}
+
+#text-reflectat1 {
+  text-align: right;
+  margin-right: 0;
+  transform-origin: top right;
+  transform: skew(20deg) rotateZ(-25deg);
+}
+
+#text-reflectat2 {
+  margin-left: 0;
+  transform-origin: top left;
+  transform: rotateY(180deg) skew(-20deg) rotateZ(-28deg) translate(-55%, -70%);
+}
+
+#reflexie:hover {
+  color: aqua;
+}
+
+
+
+body {
+  font-family: Arial, sans-serif; /* Using the font-family from the provided code */
+  --darkSlateGray: #245255; /* --red replaced with the color name */
+  --lightSteelBlue: #81A7AA; /* --yellow replaced with the color name */
+  --prussianBlue: #0D3033; /* --blueDark replaced with the color name */
+  --cadetBlue: #598D96; /* --blueLight replaced with the color name */
+  --lightCyan: #B5FAFF; /* --cream replaced with the color name */
+  --prussianBlue: #0D3033; /* --dark replaced with the color name */
+  --white: #ffffff; /* Common default for white */
+  --black: #000000; /* Common default for black */
+  --lightSteelBlue: #81A7AA; /* --secondaryGrey replaced with the color name */
+  --lightCyan: #BAD3D5; /* --lightGrey replaced with the color name */
+  --darkSlateGray: #245255; /* --visitedLinks replaced with the color name */
+}
+
+body.dark {
+  --darkSlateGray: #163739; /* Darker shade of --darkSlateGray */
+  --lightSteelBlue: #5f7c80; /* Darker shade of --lightSteelBlue */
+  --prussianBlue: #081f21; /* Darker shade of --prussianBlue */
+  --cadetBlue: #3e646b; /* Darker shade of --cadetBlue */
+  --lightCyan: #8bd0d3; /* Darker shade of --lightCyan */
+  --prussianBlue: #081f21; /* Darker shade of --prussianBlue */
+  --white: #dcdcdc; /* Slightly darker shade of white */
+  --black: #000000; /* Common default for black */
+  --lightSteelBlue: #5f7c80; /* Darker shade of --lightSteelBlue */
+  --lightCyan: #8aa9ab; /* Darker shade of --lightCyan */
+  --darkSlateGray: #163739; /* Darker shade of --darkSlateGray */
+}
+
+body.light {
+  --darkSlateGray: #4a7c7f; /* Lighter shade of --darkSlateGray */
+  --lightSteelBlue: #a0c4c7; /* Lighter shade of --lightSteelBlue */
+  --prussianBlue: #185658; /* Lighter shade of --prussianBlue */
+  --cadetBlue: #7ea6ad; /* Lighter shade of --cadetBlue */
+  --lightCyan: #d1f9fc; /* Lighter shade of --lightCyan */
+  --white: #ffffff; /* Common default for white */
+  --black: #333333; /* Lighter shade of black */
+  --lightSteelBlue: #a0c4c7; /* Lighter shade of --lightSteelBlue */
+  --lightCyan: #c5dfe1; /* Lighter shade of --lightCyan */
+  --darkSlateGray: #4a7c7f; /* Lighter shade of --darkSlateGray */
+}
+
+
+
+#banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 25vw;
+  height: 25vw;
+  display: flex;
+  font-size: 2vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+
+@keyframes bannerAnimation {
+  0% {
+      opacity: 0;
+      background-color: transparent;
+      transform: scale(0);
+  }
+
+  100% {
+      opacity: 0.75;
+      background-color: rgba(0, 220, 90);
+      transform: scale(1);
+  }
+}
+
+#banner p {
+  margin: 0;
+  color: black;
+}
+
+#banner button {
+  padding: 0.5em 1em;
+  font-size: inherit;
+}
+
+@media (max-width: 1200px) {
+  #banner {
+      opacity: 0.75;
+      background-color: rgba(0, 220, 90);
+      transform: scale(1);
+      animation: none;
+  }
+}

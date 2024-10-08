@@ -1,0 +1,49 @@
+:root {
+
+    --text-selection-color: #1805a9;
+    --navHeight: 3rem;
+
+    /* Fonts */
+    --primaryFont: 'Anton', sans-serif;
+    --lightFont: 'SpaceLight', sans-serif;
+    --regularFont: 'SpaceRegular', sans-serif;
+    --boldFont: 'SpaceBold', sans-serif;
+    --semiboldFont: 'SpaceSemiBold', sans-serif;
+
+    /* Font sizes */
+    --primaryBig: 4rem;
+    --primaryMedium: 2em;
+    --primarySmall: .5em;
+
+    --secondaryBig: 1rem;
+    --secondaryMedium: .9rem;
+    --secondarySmall: .5rem;
+}
+
+::selection {
+    color: var(--text-selection-color);
+    background: var(--yellow);
+}
+
+/* Space Grotesk Font */
+@font-face {
+    font-family: SpaceLight;
+    src: url('../fonts/SpaceGrotesk-Light.ttf');
+}
+
+@font-face {
+    font-family: SpaceRegular;
+    src: url('../fonts/SpaceGrotesk-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: SpaceBold;
+    src: url('../fonts/SpaceGrotesk-Bold.ttf');
+}
+
+@font-face {
+    font-family: Anton;
+    src: url('../fonts/Anton-Regular.ttf');
+}

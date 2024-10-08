@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description" content="Avem haine de toate tipurile, de la branduri des intalnite precum nike, adidas pana la branduri de lux precum LV, Armani, Maison Margiela, livram in toata tara.">
+    <meta name="keywords" content="adidasi, haine, fashion,designer, trending, livrare, magazin, FashionFactory, Nike, Supreme, Armani, Evisu, Off-White, Bucuresti ">
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    <title>Fashion Factory</title>
+    <%- include("../fragmente/head") %>
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+
+</head>
+
+<body>
+    <%- include("../fragmente/header") %>
+
+        <main>
+            <label> Nume: <input type="text" id="inp-nume" onchange="filtrareProduse()"></label>
+            <div> Greutate:
+                <p><label>Mic (greutate &lt; 350)
+                        <input id="i_rad1" name="gr_rad" value="0:350" type="radio" onchange="filtrareProduse()"/>
+                    </label></p>
+                <p><label>Mediu (350 &le; greutate &lt; 700)
+                        <input id="i_rad2" name="gr_rad" value="350:700" type="radio" onchange="filtrareProduse()"/>
+                    </label>
+                <p><label>Mare (700 &le; greutate)
+                        <input id="i_rad3" name="gr_rad" value="700:100000000" type="radio" onchange="filtrareProduse()"/>
+                    </label>
+                <p><label>Toate
+                        <input id="i_rad4" checked name="gr_rad" value="toate" type="radio" onchange="filtrareProduse()"/>
+                    </label>
+            </div>
+
+
+            
+
+
+            <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0" max="400" onchange="filtrareProduse()"> <span
+                    id="infoRange">(0)</span></label>
+            <label>Select simplu:
+                <select id="inp-categorie">
+                    <option id="sel-toate" selected value="toate">toate</option>
+                    <% for (let opt of locals.optiuni) { %>
+                        <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                        <% } %>
+                </select>
+            </label>
+<!--clase folosite din bootstrap-->
+            <div class="form-floating">
+                <textarea class="form-control" id="i_textarea" placeholder=" " required
+                    onchange="filtrareProduse()"></textarea>
+                <label for="i_textarea">Descriere...</label>
+                <div class="invalid-feedback">Această descriere nu corespunde niciunui produs. Vă rugăm să
+                    introduceți o descriere validă.</div>
+            </div>
+
+            <p>
+                <!--
+                <button id="filtrare" class="btn btn-primary">
+                    <span class="d-none d-md-inline">Filtreaza</span>
+                    <span class="bi bi-arrow-clockwise d-md-none"></span>
+                </button>-->
+                <button id="resetare" class="btn btn-primary">
+                    <span class="d-none d-md-inline">Reseteaza</span>
+                    <span class="bi bi-arrow-clockwise d-md-none"></span>
+                </button> 
+                <button id="sortCrescNume" class="btn btn-primary">
+                    <span class="d-none d-md-inline">Sorteaza crescator dupa pret si nume</span>
+                    <span class="bi bi-arrow-up d-md-none"></span>
+                </button>
+                <button id="sortDescrescNume" class="btn btn-primary">
+                    <span class="d-none d-md-inline">Sorteaza descrescator dupa pret si nume</span>
+                    <i class="bi bi-arrow-down d-md-none"></i>
+                </button>
+
+            </p>
+
+            <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+            <p>Număr total de produse vizibile: <span id="numar-produse-vizibile"></span></p>
+
+            <section id="produse">
+                <h2>Produse</h2>
+                <div id="mesaj-filtrare" style="display: none;">Nu există produse conform filtrării curente.</div>
+                <div class="grid-produse">
+                    <% for( let prod of locals.produse) { %>
+                        <article class="produs">
+                            <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>"><span class="val-nume"><%-
+                                            prod.nume%></span></a></h3>
+                            <div class="info-prod">
+                                <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+                                <p class="marimi">Marimi: <span class="val-marimi"><%- prod.marimi%></span></p>
+                                <p class="greutate">Greutate: <span class="val-greutate"><%- prod.greutate%></span></p>
+                                <p class="brand">Brand: <span class="val-brand"><%- prod.brand%></span></p>
+
+                            </div>
+                            <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
+                            <figure>
+                                <a href="/produs/<%- prod.id %>"><img
+                                        src="/resurse/imagine/galerie/<%- prod.imagine %>"
+                                        style="width:70%;height:auto;" alt="[imagine <%- prod.nume %>]"></a>
+                            </figure>
+                            <p class="descriere" style="display: none;">Descriere: <span><%- prod.descriere %></span></p>
+                            <label class="selecteaza-cos">
+                                Selectează:<br />
+                                <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                            </label>
+                        </article>
+                        <% }%>
+                </div>
+            </section>
+        </main>
+
+        <%- include("../fragmente/footer") %>
+</body>
+
+</html>

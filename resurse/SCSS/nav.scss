@@ -1,0 +1,125 @@
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #245255;
+  
+    ul {
+      display: none;
+      opacity: 0;
+      transform: scaleY(0);
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      background-color: #245255;
+    }
+  
+    li {
+      width: 250px;
+      height: 50px;
+      text-align: center;
+      box-sizing: border-box;
+  
+      a,
+      div {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        line-height: 50px;
+        color: white;
+        box-sizing: border-box;
+        transition: all 0.5s linear;
+        text-decoration: none;
+      }
+  
+      &:hover > a,
+      &:hover > div {
+        background-color: #0D3033;
+        color: white;
+        transform: scale(1.2); // Transform to enlarge by 20%
+      }
+  
+      &:hover > ul {
+        display: block;
+        position: absolute;
+        z-index: 100;
+        animation: animatie_submeniu 0.5s linear forwards;
+        transform-origin: center top;
+      }
+  
+      &:hover > a {
+        position: relative;
+      }
+    }
+  }
+  
+  #hamburger {
+    display: none;
+  }
+  
+  #toggle-nav {
+    display: none;
+  }
+  
+  @media screen and (max-width: 700px) {
+    #acasa-text {
+      display: none;
+    }
+  
+    #hamburger {
+      display: block;
+      cursor: pointer;
+      font-size: 30px;
+    }
+  
+    .navbar {
+      display: none;
+      position: absolute;
+      width: 100%;
+      background-color: #333;
+      left: 0;
+      top: 14%;
+  
+      li {
+        width: 100%;
+      }
+  
+      a {
+        padding: 10px;
+        border-bottom: 1px solid #fff;
+      }
+  
+      ul {
+        display: block;
+        position: static;
+        width: 100%;
+        background-color: #333;
+        border-top: 1px solid #fff;
+  
+        li {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  
+    #toggle-nav:checked + label + nav .navbar {
+      display: block;
+    }
+  }
+  
+  @keyframes animatie_submeniu {
+    from {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+  

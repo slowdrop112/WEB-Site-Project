@@ -1,0 +1,41 @@
+.galerie {
+  display: none;
+}
+@media (min-width: 768px) {
+  .galerie {
+    display: block;
+    border: 10px solid transparent;
+    border-image: url("border.png") 30 round;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.galerie .image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  transition: clip-path 5s ease-in-out;
+}
+.galerie img {
+  width: 100%;
+}
+.galerie.hover .image-container {
+  animation-play-state: paused;
+}
+
+@keyframes clip-path-animation {
+  0% {
+    clip-path: inset(0%);
+  }
+  50% {
+    clip-path: inset(0% 50%);
+  }
+  100% {
+    clip-path: inset(0%);
+  }
+}
+.image-container {
+  animation: clip-path-animation 5s infinite;
+}
